@@ -13,19 +13,17 @@ TEST(StringUtilTests, punctuation) {
     ASSERT_STREQ(res.c_str(), "");
 }
 
-TEST(StringUtilTests, whiteSpace) {
-
-    char wspace = ' ';
-    ASSERT_TRUE(String_utilities::isWhitespace(wspace));
-
-    wspace = '\n';
-    ASSERT_TRUE(String_utilities::isWhitespace(wspace));
-}
-
 TEST(StringUtilTests, lowercase) {
 
     std::string inp = "RaNdOm CapiTaLiZaTion";
     auto ret = String_utilities::toLower(inp);
 
     ASSERT_STREQ(ret.c_str(), "random capitalization");
+}
+
+TEST(StringUtilTests, trimming)
+{
+    std::string inp = "(,.[;";
+    auto ret = String_utilities::removePunct(inp);
+    ASSERT_STREQ(ret.c_str(), ".");
 }
