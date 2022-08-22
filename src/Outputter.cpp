@@ -10,13 +10,14 @@ namespace IO {
 void Outputter::print(const std::map<std::string, WordDetails>& wordMap, size_t maxWordSize) {
 
     IncrementalAlphabet incAlph;
-    auto width = static_cast<int>(maxWordSize * 1.6);
+    auto wordWidth = static_cast<int>(maxWordSize * 1.6);
+    auto alphabetWidth = static_cast<int>(wordMap.size()/26);
 
     for ( const auto& wrd: wordMap )
     {
         std::stringstream ss;
-        ss << incAlph.getNext() << ".\t\t";
-        ss << std::setw(width) << std::left << wrd.first;
+        ss << std::setw(alphabetWidth) << incAlph.getNext() << ".\t\t";
+        ss << std::setw(wordWidth) << std::left << wrd.first;
         ss << std::right << "{" << wrd.second.count << ":";
         for ( auto i = wrd.second.position.begin(); i != wrd.second.position.end(); i++ )
         {
