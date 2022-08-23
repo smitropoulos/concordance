@@ -2,7 +2,7 @@
 #define _OUTPUTTER_H_
 #include <map>
 #include "WordDetails.h"
-
+#include <string>
 
 namespace IO {
 
