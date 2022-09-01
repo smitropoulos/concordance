@@ -30,4 +30,6 @@ To run the tests, use ctest inside the build directory.
 $ ctest
 ```
 
+### Notes
 
+The program is compatible with Unix and MacOS line separators, not Windows. 
