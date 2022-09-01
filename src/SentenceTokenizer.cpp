@@ -11,11 +11,11 @@ SentenceTokenizer::SentenceTokenizer(const std::string& input) {
 
     for ( int i = 0; i < inputTrimmed.length(); i++ )
     {
-        if ( inputTrimmed[i] == '\n' )
-        {
-            start = i + 1;
-            continue;
-        }
+        //if ( inputTrimmed[i] == '\n' )
+        //{
+        //    start = i + 1;
+        //    continue;
+        //}
 
         //check for a period
         if ( inputTrimmed[i] == '.' )
